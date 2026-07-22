@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی سوم: تست شانس هندوانه‌ای - هستی</title>
+    <style>
+        body {
+            background-color: #fff9db;
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(245, 159, 0, 0.15);
+            width: 420px;
+        }
+        h1 {
+            color: #f59f00;
+            font-size: 20px;
+        }
+        p {
+            color: #495057;
+            font-size: 14px;
+        }
+        .boxes-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+        }
+        .luck-box {
+            background-color: #fff3bf;
+            border: 2px dashed #fcc419;
+            padding: 20px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            width: 30%;
+            transition: 0.2s;
+        }
+        .luck-box:hover {
+            background-color: #ffec99;
+            transform: scale(1.05);
+        }
+        .luck-box span {
+            font-size: 30px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        #resultBox {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 15px;
+            min-height: 40px;
+            color: #e67700;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #ffa94d;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .back-link:hover {
+            color: #f59f00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🍉 تست شانس هندوانه‌ای</h1>
+        <p>یکی از این ۳ تا قاچ هندوانه رو انتخاب کن ببین شانسـت چطوره! :)</p>
+        
+        <div class="boxes-row">
+            <div class="luck-box" onclick="chooseBox(1)">
+                <span>🍉</span>
+                <span>شماره ۱</span>
+            </div>
+            <div class="luck-box" onclick="chooseBox(2)">
+                <span>🍉</span>
+                <span>شماره ۲</span>
+            </div>
+            <div class="luck-box" onclick="chooseBox(3)">
+                <span>🍉</span>
+                <span>شماره ۳</span>
+            </div>
+        </div>
+
+        <div id="resultBox">هنوز چیزی انتخاب نکردی!</div>
+        
+        <br>
+        <a href="index.html" class="back-link">← برگشت به شهربازی هستی</a>
+    </div>
+
+    <script>
+        function chooseBox(boxNumber) {
+            let result = document.getElementById("resultBox");
+            
+            if (boxNumber === 1) {
+                result.innerHTML = "😂 عه! این یکی خیاره که! هندونه نبود! دوباره امتحان کن پَخمَله!";
+                result.style.color = "#d9480f";
+            } else if (boxNumber === 2) {
+                result.innerHTML = "🎉 آووووه! جک‌پات! برنده شدی ولی جایزه‌ت یه لبخند از طرف هستیه! :D";
+                result.style.color = "#2b8a3e";
+            } else if (boxNumber === 3) {
+                result.innerHTML = "🤭 پوچِ پوچ! شانس درِ خونت رو زد ولی تو خونه نبودی!";
+                result.style.color = "#e67700";
+            }
+        }
+    </script>
+
+</body>
+</html>

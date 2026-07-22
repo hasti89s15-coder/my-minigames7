@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی دوم: دکمه فراری - هستی</title>
+    <style>
+        body {
+            background-color: #fff9db;
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(245, 159, 0, 0.15);
+            width: 400px;
+            position: relative;
+            height: 280px;
+        }
+        h1 {
+            color: #f59f00;
+            font-size: 20px;
+        }
+        p {
+            color: #495057;
+            font-size: 14px;
+        }
+        #runawayBtn {
+            background-color: #ff6b6b;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            position: absolute;
+            transition: 0.1s;
+        }
+        #runawayBtn:hover {
+            background-color: #fa5252;
+        }
+        #winMessage {
+            margin-top: 140px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #2b8a3e;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #ffa94d;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .back-link:hover {
+            color: #f59f00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏃‍♂️ چالش دکمه‌ی فراری</h1>
+        <p>جرئت داری روی دکمه قرمز کلیک کن ببینم می‌تونی؟ 😏</p>
+        
+        <button id="runawayBtn" onmouseover="moveButton()">بیا منو بگییر!</button>
+        
+        <p id="winMessage"></p>
+        
+        <a href="index.html" class="back-link">← برگشت به شهربازی هستی</a>
+    </div>
+
+    <script>
+        function moveButton() {
+            let btn = document.getElementById("runawayBtn");
+            let randomX = Math.floor(Math.random() * 250) + 20;
+            let randomY = Math.floor(Math.random() * 90) + 90;
+            
+            btn.style.left = randomX + "px";
+            btn.style.top = randomY + "px";
+        }
+
+        document.getElementById("runawayBtn").addEventListener("click", function() {
+            document.getElementById("winMessage").innerHTML = "🎉 وای! چطور تونستی؟! تو فوق‌العاده‌ای!";
+            this.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی حدس عدد دیوونه - هستی</title>
+    <style>
+        body {
+            background-color: #fff9db;
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(245, 159, 0, 0.15);
+            width: 380px;
+        }
+        h1 {
+            color: #f59f00;
+            font-size: 20px;
+        }
+        p {
+            color: #495057;
+            font-size: 14px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #fcc419;
+            border-radius: 10px;
+            width: 80%;
+            margin-bottom: 15px;
+            text-align: center;
+            outline: none;
+        }
+        .game-btn {
+            background-color: #fcc419;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .game-btn:hover {
+            background-color: #f59f00;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ffa94d;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .back-link:hover {
+            color: #f59f00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>😜 حدس عدد دیوونه‌وارِ هستی</h1>
+        <p>یک عدد بین ۱ تا ۱۰ انتخاب کردم... جرئت داری حدس بزن!</p>
+        
+        <input type="number" id="userGuess" min="1" max="10" placeholder="اینجا یه عدد بنویس">
+        <br>
+        <button class="game-btn" onclick="checkGuess()">ببینم درست گفتم؟</button>
+        
+        <p id="result"></p>
+        
+        <a href="index.html" class="back-link">← برگشت به شهربازی هستی</a>
+    </div>
+
+    <script>
+        // انتخاب عدد تصادفی بین ۱ تا ۱۰ توسط کامپیوتر
+        let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+            let userVal = document.getElementById("userGuess").value;
+            let resultText = document.getElementById("result");
+
+            if (userVal === "") {
+                resultText.innerHTML = "Э بابا! اول یه عددی چیزی بنویس تو کادر! 😅";
+                resultText.style.color = "#d9480f";
+                return;
+            }
+
+            let num = Number(userVal);
+
+            if (num === secretNumber) {
+                resultText.innerHTML = "🎉 وای0 پشمام! درست حدس زدی نابغه!";
+                resultText.style.color = "2b8a3e";
+            } else if (num > secretNumber) {
+                resultText.innerHTML = "📉 ای بابا، خیلی رفتی بالا! هواپیمات سقوط کرد، بیارش پایین‌تر! ✈️";
+                resultText.style.color = "#e67700";
+            } else {
+                resultText.innerHTML = "📈 عهخی... خیلی پایینی! زیرزمینی مگه؟ ببرش بالاتر! ⛏️";
+                resultText.style.color = "#e67700";
+            }
+        }
+    </script>
+
+</body>
+</html>

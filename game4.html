@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی چهارم: دکمه لجوج - هستی</title>
+    <style>
+        body {
+            background-color: #fff9db;
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(245, 159, 0, 0.15);
+            width: 400px;
+        }
+        h1 {
+            color: #f59f00;
+            font-size: 20px;
+        }
+        p {
+            color: #495057;
+            font-size: 14px;
+        }
+        #stubbornBtn {
+            background-color: #339af0;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.1s;
+        }
+        #stubbornBtn:active {
+            transform: scale(0.95);
+        }
+        #clickCount {
+            font-size: 22px;
+            color: #f59f00;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        #tauntMessage {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #e67700;
+            min-height: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ffa94d;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .back-link:hover {
+            color: #f59f00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎯 دکمه‌ی لجوج و غرغرو</h1>
+        <p>جرئت داری انقدر رو این دکمه کلیک کن تا کفری بشه! :D</p>
+        
+        <div id="clickCount">تعداد کلیک: ۰</div>
+        
+        <button id="stubbornBtn" onclick="handleClick()">محکم کلیک کن!</button>
+        
+        <div id="tauntMessage">هنوز که کاری نکردی!</div>
+        
+        <br>
+        <a href="index.html" class="back-link">← برگشت به شهربازی هستی</a>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function handleClick() {
+            count++;
+            document.getElementById("clickCount").innerHTML = "تعداد کلیک: " + count;
+            
+            let msg = document.getElementById("tauntMessage");
+
+            // پیام‌های طنز بر اساس تعداد کلیک‌ها
+            if (count === 1) {
+                msg.innerHTML = "آخ! یواش‌تر، دستم درد گرفت!";
+            } else if (count === 5) {
+                msg.innerHTML = "چخبرته بابا؟ مگه هویج خرد می‌کنی رو کیبورد؟ 😂";
+            } else if (count === 10) {
+                msg.innerHTML = "ده تا شد! خسته نشی پهلوان؟";
+            } else if (count === 20) {
+                msg.innerHTML = "دارم جدی‌جدی عصبانی می‌شم ها! 😡😂";
+            } else if (count === 35) {
+                msg.innerHTML = "تو آدم شو نیستی، همینجوری بکوب روی من!";
+            } else if (count === 50) {
+                msg.innerHTML = "🏆 پادشاه کلیک‌های بی‌هدف! دیگه حرفی ندارم باهات!";
+            } else if (count > 50) {
+                msg.innerHTML = "دیگه داری شورش رو درمیاری... ول کن بیخیال شو! 😅";
+            }
+        }
+    </script>
+
+</body>
+</html>
